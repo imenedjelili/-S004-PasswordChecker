@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Security Checker</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="lib/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="icons/EnsiaLogo.png" alt="ENSIA Logo" class="ensia-logo">
+        </div>
+        <h1>Password Security Checker</h1>
+        
+        <div id="detected-password-banner" class="alert" style="display: none;">
+            <p>Password field detected on this page!</p>
+            <button id="check-detected-password" class="btn">Check Security</button>
+        </div>
+        
+        <div class="input-group">
+            <label for="password-input">Enter Password:</label>
+            <div class="password-wrapper">
+                <input type="password" id="password-input" placeholder="Type or paste password here">
+                <button id="toggle-password" class="icon-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="strength-section">
+            <h2>Password Strength: <span id="strength-level">Not Evaluated</span></h2>
+            <div class="progress-container">
+                <div id="strength-level-bar" class="progress-bar"></div>
+            </div>
+            <p id="password-feedback" class="feedback">Enter a password to check its strength.</p>
+        </div>
+        
+        <div class="tips-section">
+            <h3>Tips for Strong Passwords:</h3>
+            <ul>
+                <li>Use at least 12-14 characters</li>
+                <li>Mix uppercase and lowercase letters</li>
+                <li>Include numbers and special characters</li>
+                <li>Avoid common words or patterns</li>
+                <li>Don't reuse passwords across sites</li>
+            </ul>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

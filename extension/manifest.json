@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "Password Security Checker",
+  "description": "A user-friendly browser extension designed to evaluate the strength and complexity of passwords in real time. It offers actionable tips and visual indicators to help users create secure, robust passwords and avoid common vulnerabilities.",
+  "version": "1.0",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs",
+    "notifications",
+    "alarms"
+  ],
+  "commands": {
+    "open-popup": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P"
+      },
+      "description": "Open the Password Security Checker popup"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "64": "icons/icon64.png"
+    },
+    "default_title": "Password Security Checker"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "<all_urls>",
+    "https://api.pwnedpasswords.com/*",
+    "https://haveibeenpwned.com/api/v3/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/papaparse.min.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/common_passwords.csv",
+        "icons/EnsiaLogo.png",
+        "lib/papaparse.min.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

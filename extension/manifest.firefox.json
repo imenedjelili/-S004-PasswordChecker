@@ -1,0 +1,61 @@
+{
+    "manifest_version": 2,
+    "name": "Password Security Checker",
+    "description": "A user-friendly browser extension designed to evaluate the strength and complexity of passwords in real time. It offers actionable tips and visual indicators to help users create secure, robust passwords and avoid common vulnerabilities.",
+    "version": "1.0",
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "64": "icons/icon64.png",
+        "128": "icons/icon128.png",
+        "ensia": "icons/EnsiaLogo.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs",
+        "notifications",
+        "https://api.pwnedpasswords.com/*",
+        "https://haveibeenpwned.com/api/v3/*"
+    ],
+    "commands": {
+        "open-popup": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+P"
+            },
+            "description": "Open the Password Security Checker popup"
+        }
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "64": "icons/icon64.png"
+        },
+        "default_title": "Password Security Checker"
+    },
+    "background": {
+        "scripts": [
+            "browser-polyfill.js",
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "browser-polyfill.js",
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "data/common_passwords.csv",
+        "password_cracker.js"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "password-checker@example.com",
+            "strict_min_version": "57.0"
+        }
+    }
+} 

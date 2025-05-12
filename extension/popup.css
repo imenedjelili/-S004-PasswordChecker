@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.ensia-logo {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.alert {
+    background-color: #e8f0fe;
+    border: 1px solid #4285F4;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3367d6;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#password-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#password-input:focus {
+    outline: none;
+    border-color: #4285F4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.icon-button {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.icon-button:hover {
+    color: #4285F4;
+}
+
+.strength-section {
+    margin-bottom: 20px;
+}
+
+.progress-container {
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+.feedback strong {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* Add styles for password reuse warning */
+.password-reuse-warning {
+    background-color: #fff3f3;
+    border: 2px solid #ffcdd2;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 10px 0;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+.password-reuse-warning .domains {
+    color: #b71c1c;
+    font-weight: normal;
+}
+
+.tips-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.tips-section h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tips-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tips-section li {
+    padding: 6px 0;
+    color: #555;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.tips-section li:before {
+    content: "✓";
+    color: #4285F4;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+#strength-level {
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
